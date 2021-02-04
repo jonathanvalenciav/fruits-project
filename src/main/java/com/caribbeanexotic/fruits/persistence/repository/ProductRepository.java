@@ -1,9 +1,10 @@
-package com.caribbeanexotic.fruits.persistence.repository.implementation;
+package com.caribbeanexotic.fruits.persistence.repository;
 
 import com.caribbeanexotic.fruits.domain.dto.Product;
 import com.caribbeanexotic.fruits.persistence.IProductRepository;
 import com.caribbeanexotic.fruits.persistence.entity.ProductEntity;
 import com.caribbeanexotic.fruits.persistence.mapper.ProductMapper;
+import com.caribbeanexotic.fruits.persistence.repository.implementation.ProductCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
