@@ -18,7 +18,7 @@ public class ProductRepository implements IProductRepository {
     @Autowired
     ProductMapper productMapper;
 
-    public List<Product> getAll() {
+    public List<Product> getAllProducts() {
         return productMapper.toProducts((List<ProductEntity>)productCrudRepository.findAll());
     }
 }
