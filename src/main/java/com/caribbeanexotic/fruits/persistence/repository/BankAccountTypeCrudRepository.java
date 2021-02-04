@@ -1,4 +1,4 @@
-package com.caribbeanexotic.fruits.persistence.repository.implementation;
+package com.caribbeanexotic.fruits.persistence.repository;
 
 import com.caribbeanexotic.fruits.persistence.entity.BankAccountTypeEntity;
 import org.springframework.data.repository.CrudRepository;
