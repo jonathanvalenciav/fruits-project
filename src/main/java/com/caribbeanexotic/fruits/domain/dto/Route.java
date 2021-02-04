@@ -3,8 +3,8 @@ package com.caribbeanexotic.fruits.domain.dto;
 import lombok.Data;
 
 @Data
-public class Product {
+public class Route {
     private Integer id;
-    private String code;
-    private String description;
+    private Integer aPIHeader;
+    private Integer driver;
 }
