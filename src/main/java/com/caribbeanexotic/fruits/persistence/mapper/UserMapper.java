@@ -17,6 +17,5 @@ public interface UserMapper {
     UserEntity toUserEntity(UserApp user);
     
     @InheritInverseConfiguration 
-    @Mapping(target = "password", ignore = true)
     UserApp toUser(UserEntity userEntity);
 }
