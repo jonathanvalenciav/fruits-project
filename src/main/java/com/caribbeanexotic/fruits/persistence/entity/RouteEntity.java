@@ -12,7 +12,14 @@ public class RouteEntity {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
     @Column(name = "PIHeader")
-    private Integer aPIHeader;
+    private Integer PIHeaderId;
     @Column(name = "Driver")
-    private Integer driver;
+    private Integer driverId;
+
+    @ManyToOne
+    @JoinColumn(name = "Driver",insertable = false,updatable = false)
+    private ContactEntity driver;
+    @ManyToOne
+    @JoinColumn(name = "PIHeader",insertable = false,updatable = false)
+    private PIHeaderEntity PIHeader;
 }

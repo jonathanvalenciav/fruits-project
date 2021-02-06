@@ -16,5 +16,9 @@ public class CityEntity {
     @Column(name = "Name")
     private String name;
     @Column(name = "State")
-    private String state;
+    private String stateId;
+    @ManyToOne
+    @JoinColumn(name = "state",insertable = false,updatable = false)
+    private StateEntity state;
+
 }

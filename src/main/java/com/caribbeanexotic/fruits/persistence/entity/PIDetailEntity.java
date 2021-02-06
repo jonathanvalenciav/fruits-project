@@ -12,13 +12,13 @@ public class PIDetailEntity {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
     @Column(name = "PIHeader")
-    private Integer piHeader;
+    private Integer PIHeaderId;
     @Column(name = "Product")
-    private Integer product;
+    private Integer productId;
     @Column(name = "Quality")
-    private Integer quality;
+    private Integer qualityId;
     @Column(name = "UnitPrice")
-    private Integer unitPrice;
+    private Integer unitPriceId;
     @Column(name = "Lot")
     private Integer lot;
     @Column(name = "GrossWeight")
@@ -33,4 +33,17 @@ public class PIDetailEntity {
     private Double dehydratedWeight;
     @Column(name = "TotalPrice")
     private Double totalPrice;
+
+    @ManyToOne
+    @JoinColumn(name = "PIHeader",insertable = false,updatable = false)
+    private PIHeaderEntity PIHeader;
+    @ManyToOne
+    @JoinColumn(name = "Product",insertable = false,updatable = false)
+    private ProductEntity product;
+    @ManyToOne
+    @JoinColumn(name = "Quality",insertable = false,updatable = false)
+    private QualityEntity quality;
+    @ManyToOne
+    @JoinColumn(name = "UnitPrice",insertable = false,updatable = false)
+    private PriceProductProviderEntity unitPrice;
 }

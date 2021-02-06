@@ -9,14 +9,14 @@ import javax.persistence.Table;
 
 @Entity
 @Data
-@Table(name = "users")
+@Table(name = "User")
 public class UserEntity {
     @Id
-    @Column(name = "username")
-    private String userName;
-    @Column(name = "password")
+    @Column(name = "Username")
+    private String username;
+    @Column(name = "Password")
     private String password;
-    @Column(name = "enabled")
+    @Column(name = "Enabled")
     private Boolean enabled;
 
 }

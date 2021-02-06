@@ -14,11 +14,11 @@ public class ContactEntity {
     @Column(name = "IdentificationNumber")
     private String identificationNumber;
     @Column(name = "IdentificationType")
-    private Integer identificationType;
+    private Integer identificationTypeId;
     @Column(name = "ContactType")
-    private Integer contactType;
+    private Integer contactTypeId;
     @Column(name = "Role")
-    private Integer role;
+    private Integer roleId;
     @Column(name = "Name")
     private String name;
     @Column(name = "LastName")
@@ -27,8 +27,19 @@ public class ContactEntity {
     private String businessName;
     @Column(name = "PhoneNumber")
     private String phoneNumber;
-    @Column(name = "emailAddress")
+    @Column(name = "EmailAddress")
     private String emailAddress;
     @Column(name = "VehiclePlate")
-    private String vehiclePlat;
+    private String vehiclePlate;
+    @ManyToOne
+    @JoinColumn(name = "IdentificationType",insertable = false,updatable = false)
+    private IdentificationTypeEntity IdentificationType;
+    @ManyToOne
+    @JoinColumn(name = "ContactType",insertable = false,updatable = false)
+    private ContactTypeEntity contactType;
+    @ManyToOne
+    @JoinColumn(name = "Role",insertable = false,updatable = false)
+    private RoleEntity role;
+
+
 }

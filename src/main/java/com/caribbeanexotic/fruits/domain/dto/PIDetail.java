@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class PIDetail {
     private Integer id;
-    private Integer piHeader;
+    private Integer PIHeader;
     private Integer product;
     private Integer quality;
     private Integer unitPrice;

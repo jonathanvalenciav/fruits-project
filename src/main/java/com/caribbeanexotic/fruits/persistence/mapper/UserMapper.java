@@ -10,7 +10,7 @@ import org.mapstruct.Mappings;
 @Mapper(componentModel = "spring")
 public interface UserMapper {
     @Mappings({
-            @Mapping(source = "userName", target = "userName"),
+            @Mapping(source = "username", target = "username"),
             @Mapping(source = "enabled", target = "enabled"),
             @Mapping(source = "password", target = "password"),
     })

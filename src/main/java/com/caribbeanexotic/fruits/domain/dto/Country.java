@@ -6,5 +6,5 @@ import lombok.Data;
 public class Country {
     private Integer id;
     private String code;
-    private String description;
+    private String name;
 }

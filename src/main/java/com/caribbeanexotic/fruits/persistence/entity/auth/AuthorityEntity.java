@@ -8,9 +8,9 @@ import javax.persistence.Table;
 
 @Entity
 @Data
-@Table(name = "authorities")
+@Table(name = "Authority")
 public class AuthorityEntity {
     @Id
-    private Integer userName;
+    private Integer username;
     private String authority;
 }

@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -17,5 +18,12 @@ public class PIHeaderEntity {
     @Column(name = "JulianDate")
     private Integer julianDate;
     @Column(name = "Farm")
-    private Integer farm;
+    private Integer farmId;
+    @ManyToOne
+    @JoinColumn(name = "Farm",insertable = false,updatable = false)
+    private FarmEntity farm;
+
+    @OneToMany(mappedBy = "id",cascade = {CascadeType.ALL})
+    private List<PIDetailEntity> piDetails;
 }
+

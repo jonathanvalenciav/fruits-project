@@ -6,6 +6,6 @@ import lombok.Data;
 public class State {
     private Integer id;
     private String code;
-    private String Name;
+    private String name;
     private Integer country;
 }

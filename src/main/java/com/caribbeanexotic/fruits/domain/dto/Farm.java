@@ -9,7 +9,7 @@ public class Farm {
     private String name;
     private String address;
     private Integer city;
-    private String aICACertificate;
+    private String ICACertificate;
     private String globalGAPCertificate;
     private Integer provider;
 }

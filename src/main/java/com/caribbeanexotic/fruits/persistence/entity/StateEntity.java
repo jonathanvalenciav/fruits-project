@@ -14,7 +14,11 @@ public class StateEntity {
     @Column(name = "Code")
     private String code;
     @Column(name = "Name")
-    private String Name;
+    private String name;
     @Column(name = "Country")
-    private Integer country;
+    private Integer countryId;
+
+    @ManyToOne
+    @JoinColumn(name = "country",insertable = false,updatable = false)
+    private CountryEntity country;
 }

@@ -13,9 +13,9 @@ public class PriceProductProviderEntity {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
     @Column(name = "Provider")
-    private Integer provider;
+    private Integer providerId;
     @Column(name = "Product")
-    private Integer product;
+    private Integer productId;
     @Column(name = "InitialDate")
     private Date initialDate;
     @Column(name = "EndDate")
@@ -24,4 +24,13 @@ public class PriceProductProviderEntity {
     private Double price;
     @Column(name = "Status")
     private Boolean status;
+    @Column(name = "Currency")
+    private Boolean currency;
+
+    @ManyToOne
+    @JoinColumn(name = "Provider",insertable = false,updatable = false)
+    private ContactEntity provider;
+    @ManyToOne
+    @JoinColumn(name = "Product",insertable = false,updatable = false)
+    private ProductEntity product;
 }

@@ -18,11 +18,17 @@ public class FarmEntity {
     @Column(name = "Address")
     private String address;
     @Column(name = "City")
-    private Integer city;
+    private Integer cityId;
     @Column(name = "ICACertificate")
-    private String aICACertificate;
+    private String ICACertificate;
     @Column(name = "GlobalGAPCertificate")
     private String globalGAPCertificate;
     @Column(name = "Provider")
-    private Integer provider;
+    private Integer providerId;
+    @ManyToOne
+    @JoinColumn(name = "city",insertable = false,updatable = false)
+    private CityEntity city;
+    @ManyToOne
+    @JoinColumn(name = "provider",insertable = false,updatable = false)
+    private ContactEntity provider;
 }

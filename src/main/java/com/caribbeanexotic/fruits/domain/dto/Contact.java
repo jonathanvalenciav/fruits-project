@@ -14,5 +14,5 @@ public class Contact {
     private String businessName;
     private String phoneNumber;
     private String emailAddress;
-    private String vehiclePlat;
+    private String vehiclePlate;
 }
