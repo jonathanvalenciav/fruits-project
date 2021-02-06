@@ -6,5 +6,5 @@ import com.caribbeanexotic.fruits.persistence.entity.auth.UserEntity;
 
 public interface IUserRepository {
     UserApp saveUser(UserEntity userEntity);
-    UserApp getUserByUserName(String userName);
+    UserApp getUserByUsername(String username);
 }
