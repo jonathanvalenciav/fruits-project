@@ -24,6 +24,6 @@ public class PIHeaderEntity {
     private FarmEntity farm;
 
     @OneToMany(mappedBy = "id",cascade = {CascadeType.ALL})
-    private List<PIDetailEntity> piDetails;
+    private List<PIDetailEntity> PIDetails;
 }
 
