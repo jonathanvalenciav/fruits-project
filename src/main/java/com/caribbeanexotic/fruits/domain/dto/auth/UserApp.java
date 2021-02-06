@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class UserApp {
-    private String userName;
+    private String username;
     private String password;
     private Boolean enabled;
 

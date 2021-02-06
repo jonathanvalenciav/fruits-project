@@ -23,6 +23,6 @@ public class UserRepository implements IUserRepository {
 
     @Override
     public UserApp getUserByUserName(String username) {
-        return userMapper.toUser(userCrudRepository.findByUserName(username));
+        return userMapper.toUser(userCrudRepository.findByUsername(username));
     }
 }
