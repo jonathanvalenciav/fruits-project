@@ -1,9 +1,11 @@
 package com.caribbeanexotic.fruits.domain.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
 @Data
-public class Product {
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
+public class Quality {
     private Integer id;
     private String code;
     private String description;

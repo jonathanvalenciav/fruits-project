@@ -1,7 +1,9 @@
 package com.caribbeanexotic.fruits.web.controller;
 
 import com.caribbeanexotic.fruits.domain.dto.Product;
+import com.caribbeanexotic.fruits.domain.dto.Quality;
 import com.caribbeanexotic.fruits.domain.service.ProductService;
+import com.caribbeanexotic.fruits.domain.service.QualityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,13 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/products")
-public class ProductController {
+@RequestMapping("/qualities")
+public class QualityController {
     @Autowired
-    private ProductService productService;
+    private QualityService qualityService;
 
     @GetMapping("/getAll")
-    public ResponseEntity<List<Product>> getAllProducts() {
-        return new ResponseEntity<>(productService.getAllProducts(), HttpStatus.OK);
+    public ResponseEntity<List<Quality>> getAllQualities() {
+        return new ResponseEntity<>(qualityService.getAllQualities(), HttpStatus.OK);
     }
 }

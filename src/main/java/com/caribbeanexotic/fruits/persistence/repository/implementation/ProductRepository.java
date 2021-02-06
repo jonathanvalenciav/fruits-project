@@ -4,6 +4,7 @@ import com.caribbeanexotic.fruits.domain.dto.Product;
 import com.caribbeanexotic.fruits.persistence.IProductRepository;
 import com.caribbeanexotic.fruits.persistence.entity.ProductEntity;
 import com.caribbeanexotic.fruits.persistence.mapper.ProductMapper;
+import com.caribbeanexotic.fruits.persistence.repository.ProductCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -17,7 +18,7 @@ public class ProductRepository implements IProductRepository {
     @Autowired
     ProductMapper productMapper;
 
-    public List<Product> getAll() {
+    public List<Product> getAllProducts() {
         return productMapper.toProducts((List<ProductEntity>)productCrudRepository.findAll());
     }
 }

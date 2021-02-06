@@ -12,7 +12,7 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
-    public List<Product> getAll() {
-        return productRepository.getAll();
+    public List<Product> getAllProducts() {
+        return productRepository.getAllProducts();
     }
 }
