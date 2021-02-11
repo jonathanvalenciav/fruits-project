@@ -31,12 +31,12 @@ public class AuthController {
 
     @PostMapping("/authenticate")
     public ResponseEntity<AuthenticationResponse> createToken(@RequestBody AuthenticationRequest authenticationRequest){
-        try{
+        try {
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authenticationRequest.getUser(),authenticationRequest.getPassword()));
         UserDetails userDetails = userDetailService.loadUserByUsername(authenticationRequest.getUser());
         String jwt = jwtUtil.generateToken(userDetails);
         return new ResponseEntity<>(new AuthenticationResponse(jwt),HttpStatus.OK);
-        }catch (BadCredentialsException e){
+        } catch (BadCredentialsException e){
             return new ResponseEntity<>(HttpStatus.FORBIDDEN);
         }
     }

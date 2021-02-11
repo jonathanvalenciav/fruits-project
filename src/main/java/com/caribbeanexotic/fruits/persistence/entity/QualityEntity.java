@@ -11,8 +11,10 @@ public class QualityEntity {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
+
     @Column(name = "Code")
     private String code;
+
     @Column(name = "Description")
     private String description;
 }

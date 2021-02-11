@@ -6,9 +6,9 @@ import lombok.Data;
 public class Contact {
     private Integer id;
     private String identificationNumber;
-    private Integer identificationType;
-    private Integer contactType;
-    private Integer role;
+    private IdentificationType identificationType;
+    private ContactType contactType;
+    private Role role;
     private String name;
     private String lastName;
     private String businessName;

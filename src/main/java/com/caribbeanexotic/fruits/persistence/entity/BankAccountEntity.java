@@ -11,21 +11,19 @@ public class BankAccountEntity {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "BankId")
-    private Integer bankId;
-    @Column(name = "BankAccountType")
-    private Integer bankAccountTypeId;
-    @Column(name = "Contact")
-    private String contactId;
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "Bank")
+    private BankEntity bank;
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "BankAccountType")
+    private BankAccountTypeEntity bankAccountType;
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "Contact")
+    private ContactEntity contact;
+
     @Column(name = "Number")
     private String number;
-    @ManyToOne
-    @JoinColumn(name = "bankId",insertable = false,updatable = false)
-    private BankEntity bank;
-    @ManyToOne
-    @JoinColumn(name = "bankAccountType",insertable = false,updatable = false)
-    private BankAccountTypeEntity bankAccountType;
-    @ManyToOne
-    @JoinColumn(name = "contact",insertable = false,updatable = false)
-    private ContactEntity contact;
 }

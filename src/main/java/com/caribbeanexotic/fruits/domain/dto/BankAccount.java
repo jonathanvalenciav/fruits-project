@@ -5,8 +5,8 @@ import lombok.Data;
 @Data
 public class BankAccount {
     private Integer id;
-    private Integer bankId;
-    private Integer bankAccountType;
-    private String contact;
+    private Bank bank;
+    private BankAccountType bankAccountType;
+    private Contact contact;
     private String number;
 }

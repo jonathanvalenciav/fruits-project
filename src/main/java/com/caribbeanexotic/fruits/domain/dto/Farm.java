@@ -8,8 +8,8 @@ public class Farm {
     private String code;
     private String name;
     private String address;
-    private Integer city;
+    private City city;
     private String ICACertificate;
     private String globalGAPCertificate;
-    private Integer provider;
+    private Contact provider;
 }

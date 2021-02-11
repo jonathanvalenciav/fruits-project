@@ -25,7 +25,6 @@ public class UserService {
         return  bCryptPasswordEncoder;
     }
 
-
     public UserApp saveUser(UserApp user){
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         return userRepository.saveUser(userMapper.toUserEntity(user));

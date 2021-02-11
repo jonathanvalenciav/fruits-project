@@ -14,8 +14,10 @@ public class UserEntity {
     @Id
     @Column(name = "Username")
     private String username;
+
     @Column(name = "Password")
     private String password;
+
     @Column(name = "Enabled")
     private Boolean enabled;
 
