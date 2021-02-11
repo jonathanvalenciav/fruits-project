@@ -7,5 +7,5 @@ public class State {
     private Integer id;
     private String code;
     private String name;
-    private Integer country;
+    private Country country;
 }

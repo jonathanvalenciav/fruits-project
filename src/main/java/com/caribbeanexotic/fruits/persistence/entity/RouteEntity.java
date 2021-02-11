@@ -11,15 +11,12 @@ public class RouteEntity {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
-    @Column(name = "PIHeader")
-    private Integer PIHeaderId;
-    @Column(name = "Driver")
-    private Integer driverId;
 
-    @ManyToOne
-    @JoinColumn(name = "Driver",insertable = false,updatable = false)
-    private ContactEntity driver;
-    @ManyToOne
-    @JoinColumn(name = "PIHeader",insertable = false,updatable = false)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "PIHeader")
     private PIHeaderEntity PIHeader;
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "Driver")
+    private ContactEntity driver;
 }

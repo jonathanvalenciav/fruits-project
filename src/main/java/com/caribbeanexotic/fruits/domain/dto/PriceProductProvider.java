@@ -6,8 +6,8 @@ import java.util.Date;
 @Data
 public class PriceProductProvider {
     private Integer id;
-    private Integer provider;
-    private Integer product;
+    private Contact provider;
+    private Product product;
     private Date initialDate;
     private Date endDate;
     private Double price;

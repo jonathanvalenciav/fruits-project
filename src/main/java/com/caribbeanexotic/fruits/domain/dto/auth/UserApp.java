@@ -9,5 +9,4 @@ public class UserApp {
     private String username;
     private String password;
     private Boolean enabled;
-
 }

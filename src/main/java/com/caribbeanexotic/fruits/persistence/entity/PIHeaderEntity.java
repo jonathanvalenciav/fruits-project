@@ -13,17 +13,21 @@ public class PIHeaderEntity {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
+
     @Column(name = "Date")
     private Date date;
+
     @Column(name = "JulianDate")
     private Integer julianDate;
-    @Column(name = "Farm")
-    private Integer farmId;
-    @ManyToOne
-    @JoinColumn(name = "Farm",insertable = false,updatable = false)
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "Farm")
     private FarmEntity farm;
 
-    @OneToMany(mappedBy = "id",cascade = {CascadeType.ALL})
+    @OneToMany(mappedBy = "PIHeader", cascade = CascadeType.ALL)
     private List<PIDetailEntity> PIDetails;
+
+    @OneToMany(mappedBy = "PIHeader", cascade = CascadeType.ALL)
+    private List<RouteEntity> routes;
 }
 

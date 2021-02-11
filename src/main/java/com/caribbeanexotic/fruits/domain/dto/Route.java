@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class Route {
     private Integer id;
-    private Integer PIHeader;
-    private Integer driver;
+    private PIHeader PIHeader;
+    private Contact driver;
 }

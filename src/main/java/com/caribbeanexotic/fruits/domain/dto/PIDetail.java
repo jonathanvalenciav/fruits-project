@@ -5,10 +5,10 @@ import lombok.Data;
 @Data
 public class PIDetail {
     private Integer id;
-    private Integer PIHeader;
-    private Integer product;
-    private Integer quality;
-    private Integer unitPrice;
+    private PIHeader PIHeader;
+    private Product product;
+    private Quality quality;
+    private PriceProductProvider unitPrice;
     private Integer lot;
     private Double grossWeight;
     private Double netWeight;

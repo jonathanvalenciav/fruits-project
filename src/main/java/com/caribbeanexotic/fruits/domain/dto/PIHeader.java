@@ -9,5 +9,5 @@ public class PIHeader {
     private Integer id;
     private Date date;
     private Integer julianDate;
-    private Integer farm;
+    private Farm farm;
 }

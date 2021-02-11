@@ -11,8 +11,8 @@ import org.mapstruct.Mappings;
 public interface UserMapper {
     @Mappings({
             @Mapping(source = "username", target = "username"),
-            @Mapping(source = "enabled", target = "enabled"),
             @Mapping(source = "password", target = "password"),
+            @Mapping(source = "enabled", target = "enabled"),
     })
     UserEntity toUserEntity(UserApp user);
     
