@@ -2,7 +2,9 @@ package com.caribbeanexotic.fruits.web.controller;
 
 import com.caribbeanexotic.fruits.domain.dto.auth.AuthenticationRequest;
 import com.caribbeanexotic.fruits.domain.dto.auth.AuthenticationResponse;
+import com.caribbeanexotic.fruits.domain.dto.auth.UserApp;
 import com.caribbeanexotic.fruits.domain.service.UserDetailService;
+import com.caribbeanexotic.fruits.domain.service.UserService;
 import com.caribbeanexotic.fruits.web.security.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -25,6 +27,9 @@ public class AuthController {
 
     @Autowired
     private UserDetailService userDetailService;
+
+    @Autowired
+    private UserService userService;
 
     @Autowired
     private JWTUtil jwtUtil;

@@ -17,4 +17,13 @@ public class UserController {
     public ResponseEntity<UserApp> saveUser(@RequestBody UserApp user) {
         return new ResponseEntity<>(userService.saveUser(user), HttpStatus.OK);
     }
+
+    @GetMapping("/saveAdmin")
+    public ResponseEntity<UserApp> saveAdmin() {
+        UserApp userApp = new UserApp();
+        userApp.setUsername("admin");
+        userApp.setPassword("admin");
+        userApp.setEnabled(true);
+        return new ResponseEntity<>(userService.saveUser(userApp), HttpStatus.OK);
+    }
 }

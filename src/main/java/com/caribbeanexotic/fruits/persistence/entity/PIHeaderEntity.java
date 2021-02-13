@@ -17,17 +17,17 @@ public class PIHeaderEntity {
     @Column(name = "Date")
     private Date date;
 
-    @Column(name = "JulianDate")
-    private Integer julianDate;
+    @Column(name = "JulianDay")
+    private Integer julianDay;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "Farm")
     private FarmEntity farm;
 
-    @OneToMany(mappedBy = "PIHeader", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "PIHeader", cascade = {CascadeType.ALL})
     private List<PIDetailEntity> PIDetails;
 
-    @OneToMany(mappedBy = "PIHeader", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "PIHeader", cascade = {CascadeType.ALL})
     private List<RouteEntity> routes;
 }
 
