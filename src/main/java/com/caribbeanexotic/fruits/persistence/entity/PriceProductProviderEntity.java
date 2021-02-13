@@ -31,7 +31,7 @@ public class PriceProductProviderEntity {
     private Double price;
 
     @Column(name = "Currency")
-    private Boolean currency;
+    private String currency;
 
     @Column(name = "Status")
     private Boolean status;

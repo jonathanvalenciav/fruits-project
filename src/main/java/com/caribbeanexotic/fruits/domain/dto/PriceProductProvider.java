@@ -11,5 +11,6 @@ public class PriceProductProvider {
     private Date initialDate;
     private Date endDate;
     private Double price;
+    private String currency;
     private Boolean status;
 }
