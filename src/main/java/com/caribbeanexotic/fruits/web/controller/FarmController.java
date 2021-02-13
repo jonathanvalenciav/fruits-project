@@ -25,9 +25,9 @@ public class FarmController {
         return new ResponseEntity<>(farmService.getAllFarms(), HttpStatus.OK);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/getFarmById/{id}")
     public ResponseEntity<Farm> getFarmById(@PathVariable("id") Integer id) {
-        return farmService.getFarmsById(id)
+        return farmService.getFarmById(id)
                 .map(farm -> new ResponseEntity<>(farm, HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }

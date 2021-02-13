@@ -22,9 +22,9 @@ public class PIHeaderController {
         return new ResponseEntity<>(piHeaderService.getAllPIs(), HttpStatus.OK);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/getPIHeaderById/{id}")
     public ResponseEntity<PIHeader> getPIHeaderById(@PathVariable("id") Integer id) {
-        return piHeaderService.getFarmsById(id)
+        return piHeaderService.getHeaderById(id)
                 .map(piHeader -> new ResponseEntity<>(piHeader, HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }

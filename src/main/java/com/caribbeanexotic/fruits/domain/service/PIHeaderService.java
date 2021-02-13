@@ -22,7 +22,7 @@ public class PIHeaderService {
         return piHeaderRepository.getAllPI();
     }
 
-    public Optional<PIHeader> getFarmsById(Integer id) {
+    public Optional<PIHeader> getHeaderById(Integer id) {
         return piHeaderRepository.getPIById(id);
     }
 

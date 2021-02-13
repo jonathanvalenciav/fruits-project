@@ -12,4 +12,5 @@ public class PIHeader {
     private Integer julianDay;
     private Farm farm;
     private List<PIDetail> PIDetails;
+    private List<Route> routes;
 }

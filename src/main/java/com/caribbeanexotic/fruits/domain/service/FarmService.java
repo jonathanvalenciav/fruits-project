@@ -18,7 +18,7 @@ public class FarmService {
         return farmRepository.getAllFarms();
     }
 
-    public Optional<Farm> getFarmsById(Integer id) {
+    public Optional<Farm> getFarmById(Integer id) {
         return farmRepository.getFarmById(id);
     }
 }
