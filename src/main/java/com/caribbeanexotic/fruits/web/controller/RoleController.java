@@ -19,7 +19,7 @@ public class RoleController {
     private RoleService roleService;
 
     @GetMapping("/getAll")
-    public ResponseEntity<List<Role>> getAllQualities() {
+    public ResponseEntity<List<Role>> getAll() {
         return new ResponseEntity<>(roleService.getAllRoles(), HttpStatus.OK);
     }
 }

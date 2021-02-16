@@ -20,7 +20,7 @@ public class QualityController {
     private QualityService qualityService;
 
     @GetMapping("/getAll")
-    public ResponseEntity<List<Quality>> getAllQualities() {
+    public ResponseEntity<List<Quality>> getAll() {
         return new ResponseEntity<>(qualityService.getAllQualities(), HttpStatus.OK);
     }
 }

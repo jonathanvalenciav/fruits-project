@@ -24,10 +24,10 @@ public class PIHeaderEntity {
     @JoinColumn(name = "Farm")
     private FarmEntity farm;
 
-    @OneToMany(mappedBy = "PIHeader", cascade = {CascadeType.ALL})
+    @OneToMany(mappedBy = "PIHeaderDetail", cascade = CascadeType.ALL)
     private List<PIDetailEntity> PIDetails;
 
-    @OneToMany(mappedBy = "PIHeader", cascade = {CascadeType.ALL})
+    @OneToMany(mappedBy = "PIHeaderRoute", cascade = CascadeType.ALL)
     private List<RouteEntity> routes;
 }
 

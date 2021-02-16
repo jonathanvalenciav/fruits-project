@@ -21,12 +21,12 @@ public class FarmController {
     private FarmService farmService;
 
     @GetMapping("/getAll")
-    public ResponseEntity<List<Farm>> getAllFarms() {
+    public ResponseEntity<List<Farm>> getAll() {
         return new ResponseEntity<>(farmService.getAllFarms(), HttpStatus.OK);
     }
 
-    @GetMapping("/getFarmById/{id}")
-    public ResponseEntity<Farm> getFarmById(@PathVariable("id") Integer id) {
+    @GetMapping("/getById/{id}")
+    public ResponseEntity<Farm> getById(@PathVariable("id") Integer id) {
         return farmService.getFarmById(id)
                 .map(farm -> new ResponseEntity<>(farm, HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
