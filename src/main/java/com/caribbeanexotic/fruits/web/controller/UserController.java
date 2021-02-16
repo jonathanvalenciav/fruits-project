@@ -13,8 +13,8 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping("/saveUser")
-    public ResponseEntity<UserApp> saveUser(@RequestBody UserApp user) {
+    @PostMapping("/save")
+    public ResponseEntity<UserApp> save(@RequestBody UserApp user) {
         return new ResponseEntity<>(userService.saveUser(user), HttpStatus.OK);
     }
 

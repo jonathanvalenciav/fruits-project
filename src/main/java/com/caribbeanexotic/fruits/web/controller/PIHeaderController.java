@@ -9,38 +9,37 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
 @RestController
-@RequestMapping("/piheader")
+@RequestMapping("/piheaders")
 public class PIHeaderController {
 
     @Autowired
     private PIHeaderService piHeaderService;
 
     @GetMapping("/getAll")
-    public ResponseEntity<List<PIHeader>> getAllPI() {
+    public ResponseEntity<List<PIHeader>> getAll() {
         return new ResponseEntity<>(piHeaderService.getAllPIs(), HttpStatus.OK);
     }
 
-    @GetMapping("/getPIHeaderById/{id}")
-    public ResponseEntity<PIHeader> getPIHeaderById(@PathVariable("id") Integer id) {
+    @GetMapping("getById/{id}")
+    public ResponseEntity<PIHeader> getById(@PathVariable("id") Integer id) {
         return piHeaderService.getHeaderById(id)
                 .map(piHeader -> new ResponseEntity<>(piHeader, HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    @PostMapping("/savePIHeader")
-    public ResponseEntity<PIHeader> savePIHeader(@RequestBody PIHeader piHeader) {
+    @PostMapping("/save")
+    public ResponseEntity<PIHeader> save(@RequestBody PIHeader piHeader) {
         return new ResponseEntity<>(piHeaderService.savePIHeader(piHeader), HttpStatus.OK);
     }
 
-    @PutMapping("/updatePIHeader")
-    public ResponseEntity<PIHeader> updatePIHeader(@RequestBody PIHeader piHeader) {
+    @PutMapping("/update")
+    public ResponseEntity<PIHeader> update(@RequestBody PIHeader piHeader) {
         return new ResponseEntity<>(piHeaderService.updatePIHeader(piHeader), HttpStatus.OK);
     }
 
-    @DeleteMapping("/deletePIHeader")
-    public ResponseEntity<PIHeader> deletePIHeader(@RequestBody PIHeader piHeader) {
+    @DeleteMapping("/delete")
+    public ResponseEntity<PIHeader> delete(@RequestBody PIHeader piHeader) {
         piHeaderService.deletePIHeader(piHeader);
         return new ResponseEntity<>(HttpStatus.OK);
     }

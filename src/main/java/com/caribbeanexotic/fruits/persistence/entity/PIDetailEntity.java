@@ -14,7 +14,7 @@ public class PIDetailEntity {
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "PIHeader")
-    private PIHeaderEntity PIHeader;
+    private PIHeaderEntity PIHeaderDetail;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "Product")

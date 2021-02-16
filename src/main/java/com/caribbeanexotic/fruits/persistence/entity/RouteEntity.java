@@ -14,7 +14,7 @@ public class RouteEntity {
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "PIHeader")
-    private PIHeaderEntity PIHeader;
+    private PIHeaderEntity PIHeaderRoute;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "Driver")
