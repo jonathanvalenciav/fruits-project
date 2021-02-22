@@ -29,7 +29,7 @@ public class ContactController {
     }
 
     @GetMapping("/getByIdentificationNumber/{identificationNumber}")
-    public ResponseEntity<Contact> getAllByIdentificationNumber(@PathVariable("identificationNumber") String identificationNumber) {
+    public ResponseEntity<Contact> getByIdentificationNumber(@PathVariable("identificationNumber") String identificationNumber) {
         return contactService.getContactByIdentificationNumber(identificationNumber)
                 .map(contact -> new ResponseEntity<>(contact, HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
