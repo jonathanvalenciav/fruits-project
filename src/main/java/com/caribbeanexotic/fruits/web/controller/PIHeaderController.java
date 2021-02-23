@@ -1,15 +1,12 @@
 package com.caribbeanexotic.fruits.web.controller;
 
-import com.caribbeanexotic.fruits.domain.dto.PIDetail;
 import com.caribbeanexotic.fruits.domain.dto.PIHeader;
 import com.caribbeanexotic.fruits.domain.service.PIHeaderService;
-import com.caribbeanexotic.fruits.persistence.entity.PIDetailEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 @RestController
