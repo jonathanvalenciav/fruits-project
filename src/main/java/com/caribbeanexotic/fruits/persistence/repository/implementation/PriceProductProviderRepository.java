@@ -4,6 +4,8 @@ import com.caribbeanexotic.fruits.domain.dto.Contact;
 import com.caribbeanexotic.fruits.domain.dto.PriceProductProvider;
 import com.caribbeanexotic.fruits.domain.dto.Product;
 import com.caribbeanexotic.fruits.persistence.IPriceProductProviderRepository;
+import com.caribbeanexotic.fruits.persistence.entity.ContactEntity;
+import com.caribbeanexotic.fruits.persistence.entity.ProductEntity;
 import com.caribbeanexotic.fruits.persistence.mapper.ContactMapper;
 import com.caribbeanexotic.fruits.persistence.mapper.PriceProductProviderMapper;
 import com.caribbeanexotic.fruits.persistence.mapper.ProductMapper;
@@ -38,5 +40,16 @@ public class PriceProductProviderRepository implements IPriceProductProviderRepo
     public List<PriceProductProvider> getPricesByProvider(Contact provider){
         return priceProductProviderMapper.toPricesProductsProviders(
                 priceProductProviderCrudRepository.findByProvider(contactMapper.toContactEntity(provider)));
+    }
+
+    @Override
+    public PriceProductProvider getPricesByProductAndProvider(Product product, Contact provider){
+        ContactEntity providerEntity = contactMapper.toContactEntity(provider);
+        ProductEntity productEntity = productMapper.toProductEntity(product);
+
+        return priceProductProviderMapper
+                .toPriceProductProvider( priceProductProviderCrudRepository
+                        .findByProductAndProvider(productEntity, providerEntity)
+                );
     }
 }

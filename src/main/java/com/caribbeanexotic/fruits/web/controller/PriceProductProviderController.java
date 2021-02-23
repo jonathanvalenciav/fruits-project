@@ -26,4 +26,13 @@ public class PriceProductProviderController {
         return new ResponseEntity<>(priceProductProviderService
                 .getPricesProductsByProvider(identificationNumber), HttpStatus.OK);
     }
+
+    @GetMapping("/getByProviderAndProduct/{identificationNumberProvider}")
+    public ResponseEntity<PriceProductProvider> getByProviderAndProduct(
+            @RequestBody Product product,
+            @PathVariable("identificationNumberProvider") String identificationNumber) {
+
+        return new ResponseEntity<>(priceProductProviderService
+                .getPricesByProductAndProvider(product, identificationNumber), HttpStatus.OK);
+    }
 }

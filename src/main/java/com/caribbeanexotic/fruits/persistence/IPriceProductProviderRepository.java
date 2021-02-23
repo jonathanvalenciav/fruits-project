@@ -10,4 +10,5 @@ import java.util.List;
 public interface IPriceProductProviderRepository {
     List<PriceProductProvider> getPricesByProduct(Product product);
     List<PriceProductProvider> getPricesByProvider(Contact provider);
+    PriceProductProvider getPricesByProductAndProvider(Product product, Contact provider);
 }

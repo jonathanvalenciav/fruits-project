@@ -27,4 +27,10 @@ public class PriceProductProviderService {
                 .map(provider -> priceProductProviderRepository.getPricesByProvider(provider))
                 .orElse(Collections.emptyList());
     }
+
+    public PriceProductProvider getPricesByProductAndProvider(Product product, String identificationNumber) {
+        return contactService.getContactByIdentificationNumber(identificationNumber)
+                .map(provider -> priceProductProviderRepository.getPricesByProductAndProvider(product, provider))
+                .orElse(null);
+    }
 }

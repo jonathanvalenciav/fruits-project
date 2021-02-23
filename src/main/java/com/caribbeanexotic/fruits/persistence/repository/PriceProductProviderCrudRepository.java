@@ -12,4 +12,5 @@ import java.util.List;
 public interface PriceProductProviderCrudRepository extends CrudRepository<PriceProductProviderEntity,Integer> {
     List<PriceProductProviderEntity> findByProduct(ProductEntity product);
     List<PriceProductProviderEntity> findByProvider(ContactEntity provider);
+    PriceProductProviderEntity findByProductAndProvider(ProductEntity product, ContactEntity provider);
 }
