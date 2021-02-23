@@ -1,6 +1,5 @@
 package com.caribbeanexotic.fruits.persistence.entity;
 
-import com.caribbeanexotic.fruits.domain.dto.City;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -14,14 +13,14 @@ public class StateEntity {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
 
-    @Column(name = "Code")
+    @Column(name = "Code", length = 8, nullable = false)
     private String code;
 
-    @Column(name = "Name")
+    @Column(name = "Name", length = 40, nullable = false)
     private String name;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "Country")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "Country", nullable = false)
     private CountryEntity country;
 
     @OneToMany(mappedBy = "state", cascade = CascadeType.ALL)

@@ -2,14 +2,11 @@ package com.caribbeanexotic.fruits.persistence.entity.auth;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Data
-@Table(name = "User")
+@Table(name = "UserApp")
 public class UserEntity {
     @Id
     @Column(name = "Username")

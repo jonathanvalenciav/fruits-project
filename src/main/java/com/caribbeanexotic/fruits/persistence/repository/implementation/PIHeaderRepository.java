@@ -42,6 +42,6 @@ public class PIHeaderRepository implements IPIHeaderRepository {
 
     @Override
     public void deletePI(PIHeaderEntity piHeader) {
-        piHeaderCrudRepository.delete(piHeader);
+        piHeaderCrudRepository.deleteById(piHeader.getId());
     }
 }

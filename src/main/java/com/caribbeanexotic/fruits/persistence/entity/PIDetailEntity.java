@@ -1,8 +1,6 @@
 package com.caribbeanexotic.fruits.persistence.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
-import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
@@ -11,44 +9,39 @@ import javax.persistence.*;
 @Table(name = "PIDetail")
 public class PIDetailEntity {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO, generator = "native")
-    @GenericGenerator(name = "native", strategy = "native")
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "PIHeader")
-    private PIHeaderEntity PIHeaderDetail;
-
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "Product")
+    @JoinColumn(name = "Product", nullable = false)
     private ProductEntity product;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "Quality")
+    @JoinColumn(name = "Quality", nullable = false)
     private QualityEntity quality;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "UnitPrice")
+    @JoinColumn(name = "UnitPrice", nullable = false)
     private PriceProductProviderEntity unitPrice;
 
-    @Column(name = "Lot")
+    @Column(name = "Lot", nullable = false)
     private Integer lot;
 
-    @Column(name = "GrossWeight")
+    @Column(name = "GrossWeight", length = 5, nullable = false)
     private Double grossWeight;
 
-    @Column(name = "NetWeight")
+    @Column(name = "NetWeight", length = 5, nullable = false)
     private Double netWeight;
 
-    @Column(name = "PackagingWeight")
+    @Column(name = "PackagingWeight", length = 5, nullable = false)
     private Double packagingWeight;
 
-    @Column(name = "PackagingAmount")
+    @Column(name = "PackagingAmount", length = 5, nullable = false)
     private Double packagingAmount;
 
-    @Column(name = "DehydratedWeight")
+    @Column(name = "DehydratedWeight", length = 5, nullable = false)
     private Double dehydratedWeight;
 
-    @Column(name = "TotalPrice")
+    @Column(name = "TotalPrice", length = 20, scale = 3, nullable = false)
     private Double totalPrice;
 }

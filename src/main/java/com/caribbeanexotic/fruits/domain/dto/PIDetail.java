@@ -1,6 +1,5 @@
 package com.caribbeanexotic.fruits.domain.dto;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
@@ -8,6 +7,7 @@ import lombok.Data;
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class PIDetail {
     private Integer id;
+    private PIHeader PIHeader;
     private Product product;
     private Quality quality;
     private PriceProductProvider unitPrice;

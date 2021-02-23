@@ -1,7 +1,6 @@
 package com.caribbeanexotic.fruits.persistence.entity;
 
 import lombok.Data;
-import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
@@ -10,15 +9,14 @@ import javax.persistence.*;
 @Table(name = "Route")
 public class RouteEntity {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO, generator = "native")
-    @GenericGenerator(name = "native", strategy = "native")
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
 
-    @ManyToOne(cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
-    @JoinColumn(name = "PIHeader")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "PIHeader", nullable = false)
     private PIHeaderEntity PIHeaderRoute;
 
-    @ManyToOne(cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
-    @JoinColumn(name = "Driver")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "Driver", nullable = false)
     private ContactEntity driver;
 }

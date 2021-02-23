@@ -12,34 +12,34 @@ public class ContactEntity {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
 
-    @Column(name = "IdentificationNumber")
+    @Column(name = "IdentificationNumber", length = 20, nullable = false)
     private String identificationNumber;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "IdentificationType")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "IdentificationType", nullable = false)
     private IdentificationTypeEntity identificationType;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "ContactType")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "ContactType", nullable = false)
     private ContactTypeEntity contactType;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "Role")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "Role", nullable = false)
     private RoleEntity role;
 
-    @Column(name = "Name")
+    @Column(name = "Name", length = 50)
     private String name;
 
-    @Column(name = "LastName")
+    @Column(name = "LastName", length = 50)
     private String lastName;
 
-    @Column(name = "BusinessName")
+    @Column(name = "BusinessName", length = 150)
     private String businessName;
 
-    @Column(name = "PhoneNumber")
+    @Column(name = "PhoneNumber", length = 15, nullable = false)
     private String phoneNumber;
 
-    @Column(name = "EmailAddress")
+    @Column(name = "EmailAddress", length = 70)
     private String emailAddress;
 
     @Column(name = "VehiclePlate")

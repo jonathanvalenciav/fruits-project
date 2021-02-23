@@ -2,12 +2,7 @@ package com.caribbeanexotic.fruits.persistence.entity;
 
 import lombok.Data;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 @Entity
 @Data
@@ -17,9 +12,9 @@ public class ProductEntity {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
 
-    @Column(name = "Code")
+    @Column(name = "Code", length = 5, nullable = false)
     private String code;
 
-    @Column(name = "Description")
+    @Column(name = "Description", length = 100, nullable = false)
     private String description;
 }
