@@ -9,21 +9,21 @@ import javax.persistence.*;
 @Table(name = "BankAccount")
 public class BankAccountEntity {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "Bank")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "Bank", nullable = false)
     private BankEntity bank;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "BankAccountType")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "BankAccountType", nullable = false)
     private BankAccountTypeEntity bankAccountType;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "Contact")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "Contact", nullable = false)
     private ContactEntity contact;
 
-    @Column(name = "Number")
+    @Column(name = "Number", length = 20, nullable = false)
     private String number;
 }

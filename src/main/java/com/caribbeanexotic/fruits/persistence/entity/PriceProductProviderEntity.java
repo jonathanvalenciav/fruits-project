@@ -13,26 +13,26 @@ public class PriceProductProviderEntity {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "Provider")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "Provider", nullable = false)
     private ContactEntity provider;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "Product")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "Product", nullable = false)
     private ProductEntity product;
 
-    @Column(name = "InitialDate")
+    @Column(name = "InitialDate", nullable = false)
     private Date initialDate;
 
     @Column(name = "EndDate")
     private Date endDate;
 
-    @Column(name = "Price")
+    @Column(name = "Price", length = 10, scale = 3, nullable = false)
     private Double price;
 
-    @Column(name = "Currency")
+    @Column(name = "Currency", length = 4, nullable = false)
     private String currency;
 
-    @Column(name = "Status")
+    @Column(name = "Status", nullable = false)
     private Boolean status;
 }

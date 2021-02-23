@@ -12,40 +12,36 @@ public class PIDetailEntity {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "PIHeader")
-    private PIHeaderEntity PIHeaderDetail;
-
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "Product")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "Product", nullable = false)
     private ProductEntity product;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "Quality")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "Quality", nullable = false)
     private QualityEntity quality;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "UnitPrice")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "UnitPrice", nullable = false)
     private PriceProductProviderEntity unitPrice;
 
-    @Column(name = "Lot")
+    @Column(name = "Lot", nullable = false)
     private Integer lot;
 
-    @Column(name = "GrossWeight")
+    @Column(name = "GrossWeight", length = 5, nullable = false)
     private Double grossWeight;
 
-    @Column(name = "NetWeight")
+    @Column(name = "NetWeight", length = 5, nullable = false)
     private Double netWeight;
 
-    @Column(name = "PackagingWeight")
+    @Column(name = "PackagingWeight", length = 5, nullable = false)
     private Double packagingWeight;
 
-    @Column(name = "PackagingAmount")
+    @Column(name = "PackagingAmount", length = 5, nullable = false)
     private Double packagingAmount;
 
-    @Column(name = "DehydratedWeight")
+    @Column(name = "DehydratedWeight", length = 5, nullable = false)
     private Double dehydratedWeight;
 
-    @Column(name = "TotalPrice")
+    @Column(name = "TotalPrice", length = 20, scale = 3, nullable = false)
     private Double totalPrice;
 }

@@ -14,20 +14,21 @@ public class PIHeaderEntity {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
 
-    @Column(name = "Date")
+    @Column(name = "Date", nullable = false)
     private Date date;
 
-    @Column(name = "JulianDay")
+    @Column(name = "JulianDay", nullable = false)
     private Integer julianDay;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "Farm")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "Farm", nullable = false)
     private FarmEntity farm;
 
-    @OneToMany(mappedBy = "PIHeaderDetail", cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "PIHeader", nullable = false)
     private List<PIDetailEntity> PIDetails;
 
-    @OneToMany(mappedBy = "PIHeaderRoute", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "PIHeaderRoute", cascade = CascadeType.DETACH)
     private List<RouteEntity> routes;
 }
 

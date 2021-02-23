@@ -12,26 +12,26 @@ public class FarmEntity {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
 
-    @Column(name = "Code")
+    @Column(name = "Code", length = 10, nullable = false)
     private String code;
 
-    @Column(name = "Name")
+    @Column(name = "Name", length = 100, nullable = false)
     private String name;
 
-    @Column(name = "Address")
+    @Column(name = "Address", length = 100, nullable = false)
     private String address;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "City")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "City", nullable = false)
     private CityEntity city;
 
-    @Column(name = "ICACertificate")
+    @Column(name = "ICACertificate", length = 15, nullable = false)
     private String ICACertificate;
 
-    @Column(name = "GlobalGAPCertificate")
+    @Column(name = "GlobalGAPCertificate", length = 15)
     private String globalGAPCertificate;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "Provider")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "Provider", nullable = false)
     private ContactEntity provider;
 }

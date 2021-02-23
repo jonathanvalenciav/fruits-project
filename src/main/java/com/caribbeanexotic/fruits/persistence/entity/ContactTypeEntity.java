@@ -12,9 +12,9 @@ public class ContactTypeEntity {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
 
-    @Column(name = "Code")
+    @Column(name = "Code", length = 3, nullable = false)
     private String code;
 
-    @Column(name = "Description")
+    @Column(name = "Description", length = 50, nullable = false)
     private String description;
 }

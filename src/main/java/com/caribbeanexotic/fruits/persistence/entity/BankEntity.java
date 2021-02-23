@@ -12,9 +12,9 @@ public class BankEntity {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
 
-    @Column(name = "Code")
+    @Column(name = "Code", length = 8, nullable = false)
     private String code;
 
-    @Column(name = "Name")
+    @Column(name = "Name", length = 60, nullable = false)
     private String name;
 }
